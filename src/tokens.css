@@ -1,0 +1,23 @@
+/* A cashier at a bright counter, working one-handed: light surfaces, clear ink,
+   restrained crimson actions, and state colors that always include text. */
+:root {
+  --bg: oklch(1 0 0);
+  --surround: oklch(0.95 0 0);
+  --surface: oklch(0.963 0.002 27);
+  --soft: oklch(0.976 0 0);
+  --ink: oklch(0.235 0.009 27);
+  --muted: oklch(0.47 0.01 27);
+  --line: oklch(0.91 0.003 27);
+  --border: oklch(0.79 0.007 27);
+  --primary: oklch(0.464 0.169 26.9);
+  --primary-hover: oklch(0.405 0.145 27);
+  --primary-soft: oklch(0.965 0.014 27);
+  --focus: oklch(0.66 0.14 27);
+  --success: oklch(0.38 0.085 155);
+  --success-soft: oklch(0.96 0.024 155);
+  --warning: oklch(0.39 0.082 66);
+  --warning-soft: oklch(0.965 0.035 85);
+  --error: oklch(0.43 0.16 27);
+  --error-soft: oklch(0.965 0.017 27);
+  color-scheme: light;
+}

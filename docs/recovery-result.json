@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "duplicateSubmissionJobs": 1,
+  "bytesBeforeInterruption": 1024,
+  "before": "sending",
+  "after": "unknown",
+  "automaticRetry": false,
+  "explicitCopyConfirmation": true
+}

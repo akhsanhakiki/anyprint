@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "upgradePreservesPrinterAndDraft": true,
+  "legacyDefaults": "native + bold",
+  "residentTextBytes": 518,
+  "imageBytes": 20775,
+  "qualityTestBytes": 18262,
+  "normalBoldComparison": true
+}
