@@ -1,4 +1,8 @@
-# Anyprint 0.3.0 — image fidelity and compact calibration
+# Superseded by Anyprint 0.3.1
+
+This investigation was completed after the user identified the thermal paper as the cause of the physical print-quality issue. See [the final generic-printer conclusion](PRINT-QUALITY-0.3.1.md).
+
+# Historical investigation: Anyprint 0.3.0 — image fidelity and compact calibration
 
 ## Findings from the user's print
 

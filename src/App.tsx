@@ -37,7 +37,6 @@ import QRCode from "qrcode";
 import { printer, isAndroid } from "./printer";
 import {
   diagnostic,
-  vsc58Profile,
   money,
   newProfile,
   newReceipt,
@@ -1479,8 +1478,6 @@ function PrinterEditor({
         </section>
         <section className="form-section">
           <h2>03 <span>Print quality</span></h2>
-          <button type="button" className="button secondary" onClick={() => update(vsc58Profile(profile))}>Use VSC TM-58D Pro setup</button>
-          <p className="field-help">Sets 58 mm / 384 dots, bold image text, solid logos and the Column image path. Save, then run the short A/B test to check your printer.</p>
           <label>
             Text printing
             <select value={profile.textMode ?? "native"} onChange={e => update({ textMode: e.target.value as "native" | "image" })}>
@@ -1504,7 +1501,7 @@ function PrinterEditor({
             </select>
           </label>
           <p className="field-help">Solid keeps logo strokes filled. Photo uses small dots to represent shades. Images use the selected printable dot width; increasing file DPI cannot add printer dots.</p>
-          <p className="field-help">Test print is a short A/B comparison (about 4–5 cm at 384 dots). Choose Raster if A is clearer, or Column if B is clearer, under Compatibility settings. This does not change the printer’s heat setting.</p>
+          <p className="field-help">Test print is a short A/B comparison (about 4–5 cm at 384 dots). Choose the result that is clearer on your printer under Compatibility settings. This does not change the printer’s heat setting.</p>
         </section>
         <details className="advanced">
           <summary>
@@ -1532,12 +1529,12 @@ function PrinterEditor({
                   update({ imageMode: e.target.value as "raster" | "column" })
                 }
               >
-                <option value="raster">A · Raster (GS v 0)</option>
-                <option value="column">B · Column (ESC *, high density)</option>
+                <option value="raster">Raster (GS v 0) · common default</option>
+                <option value="column">Column (ESC *) · alternate firmware path</option>
               </select>
             </label>
             <p className="field-help">
-              Choose the image path with the clearest result on the short A/B test.
+              Both options send the same full-resolution dots. Use the short A/B test to choose the one your printer handles most clearly.
             </p>
             <label>
               Transfer pacing

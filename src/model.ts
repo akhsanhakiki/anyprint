@@ -170,10 +170,6 @@ export const stateLabels: Record<JobState, string> = {
   cancelled: "Cancelled",
 };
 /** Conservative alternate image path, not a firmware-specific heat/density command. */
-export function vsc58Profile(profile: PrinterProfile): PrinterProfile {
-  return { ...profile, paperMm: 58, dots: 384, textMode: "image", textWeight: "bold",
-    imageMode: "column", logoMode: "solid", paceMs: 30, cut: false };
-}
 export function diagnostic(profile: PrinterProfile): Receipt {
   return {
     title: "Anyprint / short test", subtitle: "Normal, bold, image A / B",

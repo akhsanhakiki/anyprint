@@ -4,7 +4,7 @@ An offline Android receipt-printing app with a reusable React interface and a na
 
 ## Install and use
 
-Use `releases/Anyprint-0.3.0-debug.apk` on Android 7.0 or newer. This is a debug-signed testing build, not a Play Store release. Android will ask you to allow installation from the app used to open the APK.
+Use `releases/Anyprint-0.3.1-debug.apk` on Android 7.0 or newer. This is a debug-signed testing build, not a Play Store release. Android will ask you to allow installation from the app used to open the APK.
 
 1. Open **Printers → Add your first printer**.
 2. Choose Bluetooth, USB, or Network.
@@ -16,7 +16,7 @@ Use `releases/Anyprint-0.3.0-debug.apk` on Android 7.0 or newer. This is a debug
 
 If a test is blank or garbled, try **Compatibility settings → Image mode → Compatibility**. If clipped, change printable width in multiples of eight dots. For unreliable small buffers, choose Slow transfer pacing. Only enable cutting on printers with a cutter.
 
-Version 0.3.0 preserves larger logo detail and defaults to solid lettering; Photo rendering remains available. Existing profiles keep their connection and text settings. Install over the previous version without uninstalling. **Test print** now prints a short A/B image comparison (approximately 4–5 cm at 384 dots). Under **Printers → Edit → Print quality**, an optional VSC TM-58D Pro setup selects a generic alternate image path; it is not a certified model-specific density command. Save and compare the A/B slip. See [image-quality analysis and verification](docs/PRINT-QUALITY-0.3.0.md).
+Version 0.3.1 preserves larger logo detail and defaults to solid lettering; Photo rendering remains available. Existing profiles keep their connection and text settings. Install over the previous version without uninstalling. **Test print** prints a short A/B image comparison (approximately 4–5 cm at 384 dots). Under **Printers → Edit → Print quality**, choose the generic image path that is clearest on the target printer. No manufacturer-specific density or heat command is sent. See [print-quality conclusion](docs/PRINT-QUALITY-0.3.1.md).
 
 ## Compatibility contract
 

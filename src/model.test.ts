@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import {
   newReceipt,
   diagnostic,
-  vsc58Profile,
   newProfile,
   total,
   validateReceipt,
@@ -75,11 +74,6 @@ describe("print quality defaults", () => {
 });
 
 describe("compact quality setup", () => {
-  it("VSC setup preserves connection identity and selects a conservative image path", () => {
-    const old = { ...newProfile(), id: "saved", name: "Counter", address: "AA:BB:CC:DD:EE:FF" };
-    expect(vsc58Profile(old)).toMatchObject({ id: old.id, name: old.name, address: old.address,
-      paperMm:58, dots:384, textMode:"image", imageMode:"column", logoMode:"solid", paceMs:30, cut:false });
-  });
   it("diagnostic has no long footer or QR and remains a valid job", () => {
     const r = diagnostic(newProfile());
     expect(r).toMatchObject({qualityCheck:true, footer:"", qr:"", logo:"", date:""});

@@ -47,16 +47,15 @@ test('quality controls default to native font and darker output', async ({ page 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
-test('VSC setup selects image output and solid logos without losing address', async ({page}) => {
+test('generic image protocol choices remain available without changing printer identity', async ({page}) => {
   await page.goto('/');
   await page.getByRole('button',{name:'Set up a printer',exact:true}).click();
   await page.getByRole('button',{name:'Network',exact:true}).click();
   await page.getByLabel('Printer IP address').fill('192.168.1.100');
-  await page.getByRole('button',{name:'Use VSC TM-58D Pro setup',exact:true}).click();
   await expect(page.getByLabel('Printer IP address')).toHaveValue('192.168.1.100');
-  await expect(page.getByRole('combobox',{name:'Text printing',exact:true})).toHaveValue('image');
   await expect(page.getByRole('combobox',{name:'Logo rendering',exact:true})).toHaveValue('solid');
   await page.getByText('Compatibility settings',{exact:true}).click();
+  await page.getByRole('combobox',{name:'Image mode',exact:true}).selectOption('column');
   await expect(page.getByRole('combobox',{name:'Image mode',exact:true})).toHaveValue('column');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
